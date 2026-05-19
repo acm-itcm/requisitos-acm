@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Capítulo Estudiantil ACM ITCM</title>
+
+        <style>
+
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family:Arial, Helvetica, sans-serif;
+            }
+
+            body{
+                background:#f4f6f9;
+                color:#333;
+                line-height:1.6;
+            }
+
+            /* ENCABEZADO */
+
+            header{
+                background:#0d47a1;
+                color:white;
+                text-align:center;
+                padding:50px 20px;
+            }
+
+            .titulo-con-logos{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                gap:25px;
+                margin-bottom:20px;
+            }
+
+            .logo{
+                width:90px;
+                height:auto;
+            }
+
+            h1{
+                font-size:3.2rem;
+                font-weight:bold;
+            }
+
+            header p{
+                font-size:1.4rem;
+            }
+
+            /* CONTENIDO */
+
+            .container{
+                width:90%;
+                max-width:1100px;
+                margin:40px auto;
+            }
+
+            .card{
+                background:white;
+                padding:30px;
+                margin-bottom:30px;
+                border-radius:15px;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            h2{
+                color:#0d47a1;
+                margin-bottom:20px;
+                border-bottom:3px solid #0d47a1;
+                display:inline-block;
+                padding-bottom:5px;
+            }
+
+            ul{
+                margin-left:20px;
+                margin-top:15px;
+            }
+
+            li{
+                margin-bottom:12px;
+            }
+
+            /* PUESTOS */
+
+            .puestos{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+                gap:15px;
+                margin-top:20px;
+            }
+
+            .puesto{
+                background:#e3f2fd;
+                padding:15px;
+                border-radius:10px;
+                text-align:center;
+                font-weight:bold;
+                cursor:pointer;
+                transition:.3s;
+            }
+
+            .puesto:hover{
+                background:#bbdefb;
+                transform:scale(1.03);
+            }
+
+            /* INFORMACION */
+
+            .info{
+                display:none;
+                margin-top:20px;
+                background:#ffffff;
+                padding:20px;
+                border-left:5px solid #0d47a1;
+                border-radius:10px;
+                box-shadow:0 2px 8px rgba(0,0,0,0.1);
+            }
+
+            /* BOTON */
+
+            .btn{
+                display:inline-block;
+                margin-top:20px;
+                padding:12px 25px;
+                background:#0d47a1;
+                color:white;
+                text-decoration:none;
+                border-radius:8px;
+                transition:.3s;
+            }
+
+            .btn:hover{
+                background:#1565c0;
+            }
+
+            /* PIE */
+
+            .footer{
+                background:#0d47a1;
+                color:white;
+                text-align:center;
+                padding:20px;
+                margin-top:40px;
+            }
+
+            /* RESPONSIVE */
+
+            @media(max-width:768px){
+
+                .titulo-con-logos{
+                    flex-wrap:wrap;
+                }
+
+                h1{
+                    font-size:2rem;
+                }
+
+                .logo{
+                    width:65px;
+                }
+
+                header p{
+                    font-size:1rem;
+                }
+
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <header>
+
+            <div class="titulo-con-logos">
+
+                <img src="logo.png" alt="Logo izquierdo" class="logo">
+
+                <h1>Capítulo Estudiantil ACM ITCM</h1>
+
+                <img src="logo2.png" alt="Logo derecho" class="logo">
+
+            </div>
+
+            <p>Convocatoria para formar parte de la Mesa Directiva</p>
+
+        </header>
+
+        <div class="container">
+
+            <!-- MESA DIRECTIVA -->
+
+            <div class="card">
+
+                <h2>Mesa Directiva</h2>
+
+                <p>
+                    La Mesa Directiva del Capítulo Estudiantil ACM estará conformada por 8 
+                    integrantes, procurando una participación equitativa entre hombres y mujeres, 
+                    promoviendo la inclusión y diversidad. 
+                    <strong>Da clic en cada cargo para conocer sus funciones.</strong> </p>
+
+                <div class="puestos">
+
+                    <div class="puesto" onclick="mostrarInfo('presidente')">Presidente(a)</div>
+
+                    <div class="puesto" onclick="mostrarInfo('vice')">Vicepresidente(a)</div>
+
+                    <div class="puesto" onclick="mostrarInfo('secretario')">Secretario(a)</div>
+
+                    <div class="puesto" onclick="mostrarInfo('tesorero')">Tesorero(a)</div>
+
+                    <div class="puesto" onclick="mostrarInfo('webmaster')">Web Master</div>
+
+                    <div class="puesto" onclick="mostrarInfo('vocal1')">Vocal 1</div>
+
+                    <div class="puesto" onclick="mostrarInfo('vocal2')">Vocal 2</div>
+
+                    <div class="puesto" onclick="mostrarInfo('vocal3')">Vocal 3</div>
+
+                </div>
+
+                <!-- PRESIDENTE -->
+
+                <div id="presidente" class="info">
+                    <h3>Funciones del Presidente(a)</h3>
+
+                    <ul>
+                        <li>Representar oficialmente al Capítulo Estudiantil ACM ante autoridades, docentes y organismos externos.</li>
+                        <li>Coordinar y supervisar las actividades y proyectos del capítulo.</li>
+                        <li>Convocar y dirigir reuniones de la mesa directiva y asambleas.</li>
+                        <li>Promover el cumplimiento de los objetivos, reglamentos y valores de ACM.</li>
+                        <li>Tomar decisiones estratégicas en beneficio del capítulo.</li>
+                        <li>Fomentar la participación activa de los miembros.</li>
+                    </ul>
+                </div>
+
+                <!-- VICEPRESIDENTE -->
+
+                <div id="vice" class="info">
+                    <h3>Funciones del Vicepresidente(a)</h3>
+
+                    <ul>
+                        <li>Apoyar al presidente(a) en la organización y coordinación de actividades.</li>
+                        <li>Sustituir al presidente(a) en caso de ausencia temporal.</li>
+                        <li>Supervisar comités o áreas de trabajo asignadas.</li>
+                        <li>Coordinar eventos académicos, tecnológicos y de integración.</li>
+                        <li>Dar seguimiento a proyectos internos del capítulo.</li>
+                    </ul>
+                </div>
+
+                <!-- SECRETARIO -->
+
+                <div id="secretario" class="info">
+                    <h3>Funciones del Secretario(a)</h3>
+
+                    <ul>
+                        <li>Elaborar y resguardar actas de reuniones y documentos oficiales.</li>
+                        <li>Llevar el control y registro de miembros del capítulo.</li>
+                        <li>Gestionar comunicados, convocatorias y correspondencia.</li>
+                        <li>Organizar archivos y documentación administrativa.</li>
+                        <li>Apoyar en la logística de reuniones y actividades.</li>
+                    </ul>
+                </div>
+
+                <!-- TESORERO -->
+
+                <div id="tesorero" class="info">
+                    <h3>Funciones del Tesorero(a)</h3>
+
+                    <ul>
+                        <li>Administrar los recursos económicos del capítulo.</li>
+                        <li>Llevar el control de ingresos, egresos y presupuestos.</li>
+                        <li>Elaborar reportes financieros periódicos.</li>
+                        <li>Coordinar actividades de recaudación de fondos.</li>
+                        <li>Garantizar el uso responsable y transparente de los recursos.</li>
+                    </ul>
+                </div>
+
+                <!-- WEB MASTER -->
+
+                <div id="webmaster" class="info">
+                    <h3>Funciones del Web Master</h3>
+
+                    <ul>
+                        <li>Diseñar, administrar y actualizar la página web y plataformas digitales del capítulo.</li>
+                        <li>Mantener actualizadas las redes sociales y medios de difusión.</li>
+                        <li>Publicar noticias, eventos, convocatorias y contenido tecnológico.</li>
+                        <li>Brindar soporte técnico en plataformas digitales.</li>
+                        <li>Apoyar en el diseño gráfico y material multimedia del capítulo.</li>
+                    </ul>
+                </div>
+
+                <!-- VOCAL 1 -->
+
+                <div id="vocal1" class="info">
+                    <h3>Funciones del Vocal 1</h3>
+
+                    <ul>
+                        <li>Apoyar en la organización y ejecución de actividades del capítulo.</li>
+                        <li>Participar activamente en reuniones y propuestas de mejora.</li>
+                        <li>Coordinar tareas o comisiones asignadas por la mesa directiva.</li>
+                        <li>Servir de enlace entre miembros y directivos.</li>
+                    </ul>
+                </div>
+
+                <!-- VOCAL 2 -->
+
+                <div id="vocal2" class="info">
+                    <h3>Funciones del Vocal 2</h3>
+
+                    <ul>
+                        <li>Colaborar en eventos académicos, culturales y tecnológicos.</li>
+                        <li>Apoyar en actividades de difusión y promoción del capítulo.</li>
+                        <li>Dar seguimiento a proyectos y actividades estudiantiles.</li>
+                        <li>Proponer iniciativas para fortalecer la participación de los miembros.</li>
+                    </ul>
+                </div>
+
+                <!-- VOCAL 3 -->
+
+                <div id="vocal3" class="info">
+                    <h3>Funciones del Vocal 3</h3>
+
+                    <ul>
+                        <li>Apoyar en la logística y desarrollo de actividades internas y externas.</li>
+                        <li>Participar en campañas de integración y crecimiento del capítulo.</li>
+                        <li>Colaborar con las distintas áreas de la mesa directiva.</li>
+                        <li>Contribuir al cumplimiento de los objetivos y metas del capítulo.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- REQUISITOS -->
+
+            <div class="card">
+
+                <h2>Requisitos</h2>
+
+                <ul>
+                    <li>Ser alumno(a) activo y regular de Ingeniería en Sistemas Computacionales.</li>
+                    <li>Contar con promedio mínimo de 80.</li>
+                    <li>Demostrar liderazgo, iniciativa y responsabilidad.</li>
+                    <li>Tener habilidades para el trabajo en equipo.</li>
+                    <li>Respetar el reglamento interno del Departamento.</li>
+                    <li>Comprometerse con el fortalecimiento del Capítulo ACM.</li>
+                    <li>Llenar el formato de registro con los integrantes de la planilla.</li>
+                </ul>
+
+            </div>
+
+            <!-- PLAN -->
+
+            <div class="card">
+
+                <h2>Plan de Trabajo</h2>
+
+                <p>
+                    Los aspirantes deberán presentar un plan de trabajo con duración de 32 semanas que incluya:
+                </p>
+
+                <ul>
+                    <li>Actividades académicas, tecnológicas y de vinculación.</li>
+                    <li>Proyectos y eventos para beneficio del Departamento.</li>
+                    <li>Acciones orientadas al desarrollo profesional estudiantil.</li>
+                </ul>
+
+                <p style="margin-top:20px;">
+                    El plan será evaluado por el cuerpo académico del Departamento de Sistemas y Computación.
+                </p>
+
+                <a href="plan.pdf" class="btn">Descargar formato Plan de Trabajo</a>
+                <a href="registro.pdf" class="btn">Descargar formato de Registro</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>Instituto Tecnológico de Ciudad Madero | Departamento de Sistemas y Computación</p>
+            <p>Capítulo Estudiantil ACM</p>
+            <p>Ingeniería en Sistemas Computacionales</p>
+        </div>
+
+        <!-- JAVASCRIPT -->
+
+        <script>
+
+            function mostrarInfo(id) {
+
+                let infos = document.querySelectorAll(".info");
+
+                infos.forEach(function (info) {
+                    info.style.display = "none";
+                });
+
+                let elemento = document.getElementById(id);
+
+                elemento.style.display = "block";
+            }
+
+        </script>
+
+    </body>
+</html>
